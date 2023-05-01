@@ -1,12 +1,8 @@
 package br.solid.project.rh.service;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-import br.solid.project.rh.exception.ValidacaoException;
 import br.solid.project.rh.model.Funcionario;
 import br.solid.project.rh.validacoes.IValidacaoReajuste;
 
