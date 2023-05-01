@@ -7,6 +7,7 @@ import java.time.temporal.ChronoUnit;
 import br.solid.project.rh.exception.ValidacaoException;
 import br.solid.project.rh.model.Funcionario;
 
+//Open Close Principle. Class responsible only to TempoReajute.
 public class ValidacaoTempoReajuste implements IValidacaoReajuste{
 
     @Override
