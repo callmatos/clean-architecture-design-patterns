@@ -6,56 +6,21 @@ import java.time.LocalDate;
 
 public class Funcionario {
 
-	private String nome;
-	private String cpf;
-	private Cargo cargo;
-	private BigDecimal salario;
 	private LocalDate dataUltimoReajuste;
+	private DadosPessoais dPessoais;
 
 	public Funcionario(String nome, String cpf, Cargo cargo, BigDecimal salario) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.cargo = cargo;
-		this.salario = salario;
+	
+		// Principio de Liskov Substituion Principle
+		dPessoais = new DadosPessoais(nome, cpf, cargo, salario);
 	}
 
 	public void atualizarSalario(BigDecimal aumento) {
 		
-		this.salario = aumento;
+		this.dPessoais.setSalario(aumento);
 		this.dataUltimoReajuste = LocalDate.now();
 	}
 
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public Cargo getCargo() {
-		return cargo;
-	}
-
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
-	}
-
-	public BigDecimal getSalario() {
-		return salario;
-	}
-
-	public void setSalario(BigDecimal salario) {
-		this.salario = salario;
-	}
 
 	public LocalDate getDataUltimoReajuste() {
 		return dataUltimoReajuste;
@@ -63,6 +28,15 @@ public class Funcionario {
 
 	public void setDataUltimoReajuste(LocalDate dataUltimoReajuste) {
 		this.dataUltimoReajuste = dataUltimoReajuste;
+	}
+
+    public void promover(Cargo novoCargo) {
+
+		this.dPessoais.setCargo(novoCargo); 
+    }
+
+	public DadosPessoais getdPessoais() {
+		return dPessoais;
 	}
 
 }

@@ -26,7 +26,7 @@ public class ReajusteService {
         this.listaValidacoes.forEach(v -> v.validar(func, aumento));
 
         // Reajuste only is applied if all rules is OK.
-        BigDecimal novoSalarioAtualizado = func.getSalario().add(aumento);
+        BigDecimal novoSalarioAtualizado = func.getdPessoais().getSalario().add(aumento);
         func.atualizarSalario(novoSalarioAtualizado);
 
     }

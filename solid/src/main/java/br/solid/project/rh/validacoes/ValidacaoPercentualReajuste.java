@@ -12,7 +12,7 @@ public class ValidacaoPercentualReajuste implements IValidacaoReajuste{
     @Override
     public void validar(Funcionario func, BigDecimal aumento){
         
-        BigDecimal salarioAtual = func.getSalario();
+        BigDecimal salarioAtual = func.getdPessoais().getSalario();
 
         // Valida o percentual
         BigDecimal percentualReajuste = aumento.divide(salarioAtual, RoundingMode.HALF_UP);
