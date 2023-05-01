@@ -6,6 +6,7 @@ import java.math.RoundingMode;
 import br.solid.project.rh.exception.ValidacaoException;
 import br.solid.project.rh.model.Funcionario;
 
+//Open Close Principle. Class responsible only to Percentual.
 public class ValidacaoPercentualReajuste implements IValidacaoReajuste{
     
     @Override

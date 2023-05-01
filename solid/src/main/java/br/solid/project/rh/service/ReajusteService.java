@@ -12,6 +12,7 @@ import br.solid.project.rh.validacoes.IValidacaoReajuste;
 
 public class ReajusteService {
     
+    // The IValidacaoReajuste use the principle of "Open Close Principle where we have many type of validation implemented separadamente."
     private List<IValidacaoReajuste> listaValidacoes;
 
     public ReajusteService(List<IValidacaoReajuste> listaValidacoes) {
@@ -21,8 +22,10 @@ public class ReajusteService {
     public void reajusteSalarioFuncionario(Funcionario func, BigDecimal aumento){
 
         //apply the validation to reajuste to funcionario.
+        // Here verify the rules to reajusteSalario.
         this.listaValidacoes.forEach(v -> v.validar(func, aumento));
 
+        // Reajuste only is applied if all rules is OK.
         BigDecimal novoSalarioAtualizado = func.getSalario().add(aumento);
         func.atualizarSalario(novoSalarioAtualizado);
 
